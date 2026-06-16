@@ -13,7 +13,7 @@ Though it runs on home hardware, it's engineered like production: GitOps, policy
 ```mermaid
 flowchart TB
     GH["GitHub repos · this org"] -->|GitOps reconcile| K8S
-    EDGE["Edge & Network<br/>Cloudflare · Pi-hole HA · HAProxy · Nginx PM"] --> K8S
+    EDGE["Edge & Ingress<br/>Cloudflare · Pi-hole HA · HAProxy · Nginx PM"] --> K8S
     K8S["Kubernetes · 9 VM nodes (kubeadm)<br/>Flux · ingress-nginx / MetalLB · Kyverno · External Secrets + 1Password"]
     K8S -->|runs on| VIRT["VMware vSphere · 3× ESXi / vCenter"]
     K8S -->|persists to| STORE["Storage · TrueNAS SMB · Longhorn"]
