@@ -12,44 +12,12 @@ Though it runs on home hardware, it's engineered like production: GitOps, policy
 
 ```mermaid
 flowchart TB
-    GH["GitHub repos in this org"]
-
-    subgraph edge["Edge & Network"]
-        direction LR
-        UDM["UniFi Dream Machine SE"]
-        CF["Cloudflare Tunnel"]
-        PH["Pi-hole DNS · HA / keepalived"]
-        HAP["HAProxy · internal + DMZ VIPs"]
-        NPM["Nginx Proxy Manager"]
-    end
-
-    subgraph virt["Virtualization — VMware vSphere"]
-        ESXi["3x ESXi hosts / vCenter"]
-    end
-
-    subgraph cluster["Kubernetes — 9 VM nodes · self-managed kubeadm"]
-        direction LR
-        FLUX["Flux CD · GitOps reconciliation"]
-        ING["ingress-nginx · MetalLB"]
-        KYV["Kyverno · policy-as-code"]
-        ESO["External Secrets Operator + 1Password"]
-        APPS["Self-hosted workloads"]
-    end
-
-    subgraph storage["Storage"]
-        direction LR
-        TN["TrueNAS · SMB shares"]
-        LH["Longhorn · in-cluster block"]
-    end
-
-    ANS["ansible01 · OS & cluster automation"]
-
-    GH -->|reconciled by| FLUX
-    edge --> cluster
-    virt --> cluster
-    cluster --> storage
-    ANS -.-> virt
-    ANS -.-> cluster
+    GH["GitHub repos · this org"] -->|GitOps reconcile| K8S
+    EDGE["Edge & Network<br/>Cloudflare · Pi-hole HA · HAProxy · Nginx PM"] --> K8S
+    K8S["Kubernetes · 9 VM nodes (kubeadm)<br/>Flux · ingress-nginx / MetalLB · Kyverno · External Secrets + 1Password"]
+    K8S -->|runs on| VIRT["VMware vSphere · 3× ESXi / vCenter"]
+    K8S -->|persists to| STORE["Storage · TrueNAS SMB · Longhorn"]
+    ANS["ansible01 · automation"] -.-> VIRT
 ```
 
 ## Engineering highlights
