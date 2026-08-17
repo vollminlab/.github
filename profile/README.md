@@ -42,25 +42,26 @@ flowchart TB
 |---|---|
 | [ansible-playbooks](https://github.com/vollminlab/ansible-playbooks) | Ansible automation for rolling Kubernetes upgrades, OS patching, and host configuration. |
 | [github-admin](https://github.com/vollminlab/github-admin) | Terraform managing GitHub repositories and branch-protection rules across the org. |
+| [VMDeployTools](https://github.com/vollminlab/VMDeployTools) | A PowerShell module for zero-touch VM deployment on VMware vSphere, with 1Password-backed credentials and automatic DNS registration. |
 
 ### Custom Kubernetes controllers
 | Repo | Description |
 |---|---|
-| [longhorn-rebalancing-controller](https://github.com/vollminlab/longhorn-rebalancing-controller) | A Go controller that balances Longhorn volume replica allocation across worker nodes. |
-| [shlink-ingress-controller](https://github.com/vollminlab/shlink-ingress-controller) | A Go controller that auto-creates Shlink short links from Ingress annotations. |
+| [longhorn-rebalancing-controller](https://github.com/vollminlab/longhorn-rebalancing-controller) | A Go controller that rebalances Longhorn replicas by scheduled bytes rather than replica count — closing a gap in Longhorn's own auto-balancer. |
+| [shlink-ingress-controller](https://github.com/vollminlab/shlink-ingress-controller) | A Go controller that auto-creates Shlink short links from Ingress annotations, with finalizer-based cleanup. |
 
 ### Apps & services
 | Repo | Description |
 |---|---|
-| [pihole-flask-api](https://github.com/vollminlab/pihole-flask-api) | A lightweight REST API for managing Pi-hole DNS A records. |
+| [vollmint](https://github.com/vollminlab/vollmint) | A self-hosted household budget tracker — Go API with an embedded React SPA, syncing real bank data via SimpleFIN with transfer-aware categorization. |
+| [pihole-flask-api](https://github.com/vollminlab/pihole-flask-api) | A lightweight REST API for managing Pi-hole DNS records, used to automate DNS during VM provisioning. |
 | [groupme-exporter](https://github.com/vollminlab/groupme-exporter) | A daemon that archives GroupMe chat history into a SQLite database. |
 | [masters-league](https://github.com/vollminlab/masters-league) | A Masters Tournament leaderboard and scorecard viewer for a fantasy golf league. |
-| [VMDeployTools](https://github.com/vollminlab/VMDeployTools) | A PowerShell module for automated VM deployment on VMware vSphere. |
 
 ### Documentation
 | Repo | Description |
 |---|---|
-| [homelab-obsidian-vault](https://github.com/vollminlab/homelab-obsidian-vault) | The org-wide Obsidian knowledge base — runbooks, architecture notes, and the homelab graph. |
+| [homelab-obsidian-vault](https://github.com/vollminlab/homelab-obsidian-vault) | The org-wide Obsidian knowledge base — runbooks, architecture notes, and the homelab graph, synced automatically from every repo's `docs/`. |
 
 ---
 
