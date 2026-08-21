@@ -54,6 +54,7 @@ flowchart TB
 | Repo | Description |
 |---|---|
 | [vollmint](https://github.com/vollminlab/vollmint) | A self-hosted household budget tracker — Go API with an embedded React SPA, syncing real bank data via SimpleFIN with transfer-aware categorization. |
+| [clipbridge](https://github.com/vollminlab/clipbridge) | One keystroke puts a Windows screenshot into a Claude Code prompt on a remote box — a NativeAOT tray app that streams the image over existing SSH and pastes the stored path back, with a POSIX `sh` receiver on the far end. |
 | [pihole-flask-api](https://github.com/vollminlab/pihole-flask-api) | A lightweight REST API for managing Pi-hole DNS records, used to automate DNS during VM provisioning. |
 | [groupme-exporter](https://github.com/vollminlab/groupme-exporter) | A daemon that archives GroupMe chat history into a SQLite database. |
 | [masters-league](https://github.com/vollminlab/masters-league) | A Masters Tournament leaderboard and scorecard viewer for a fantasy golf league. |
